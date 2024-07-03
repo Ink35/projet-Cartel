@@ -1,0 +1,42 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #e5e5e5;
+  z-index: 1003;
+  overflow: hidden;
+  height: 9rem;
+}
+
+.header figure img {
+  height: 4rem;
+  margin-top: 1rem;
+  margin-left: 10px;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.header nav ul a {
+  text-decoration: none;
+  color: black;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.header nav ul a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.header button:hover {
+  background-color: black;
+  color: white;
+}

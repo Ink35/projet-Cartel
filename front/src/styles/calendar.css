@@ -1,0 +1,10 @@
+.calendar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.google-calendar {
+  border: solid 0px #777;
+  width: 50rem;
+  height: 40rem;
+}

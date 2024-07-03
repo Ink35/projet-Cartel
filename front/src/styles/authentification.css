@@ -1,0 +1,15 @@
+.form-auth {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.form-auth button {
+  width: 30%;
+  align-self: center;
+}
+
+.form-auth button:hover {
+  background-color: black;
+  color: white;
+}

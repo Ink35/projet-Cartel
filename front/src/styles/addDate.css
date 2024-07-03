@@ -1,0 +1,35 @@
+.add-date-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+}
+
+.css-b62m3t-container {
+  width: 48%;
+  margin: 0.2rem;
+}
+
+.select-com {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.form-radio {
+  margin: 1.2rem;
+}
+
+.comments-area {
+  margin: 0.5rem;
+  width: 50%;
+}
+
+.btn-add-date {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}

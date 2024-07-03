@@ -1,0 +1,17 @@
+.form-create-user {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  margin-top: 0;
+  justify-content: center;
+}
+
+.form-create-user input {
+  width: 100%;
+}
+
+.col-12 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}

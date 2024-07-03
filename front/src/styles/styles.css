@@ -1,0 +1,7 @@
+body {
+  height: 100%;
+  margin: 0;
+  background-image: url(../../public/img/dots\ background\ image\ cartel.png);
+  background-repeat: repeat;
+  font-family: "Yanone Kaffeesatz", Impact;
+}

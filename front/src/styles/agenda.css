@@ -1,0 +1,119 @@
+.agenda-cards {
+  border: 1px solid black;
+  width: 30%;
+  height: 80vh;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.agenda-cards::-webkit-scrollbar {
+  width: 0; /* Masquer la barre de défilement de Chrome/Safari */
+}
+
+.agenda-cards {
+  scrollbar-width: none; /* Masquer la barre de défilement de Firefox */
+}
+
+.agenda-cards h1 {
+  color: white;
+  background-color: black;
+  font-size: 2rem;
+  padding: 0.5rem;
+  padding-left: 0.8rem;
+}
+
+.agenda-cards ul {
+  padding: 0;
+}
+
+.agenda-cards ul li {
+  border-top: 1px solid grey;
+  list-style: none;
+}
+
+.agenda-card {
+  display: flex;
+}
+
+.date-day {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.date-bar {
+  background-image: url(../../public/img/dateDroite.png);
+  height: 42px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 3px;
+  background-origin: padding-box;
+  background-clip: border-box;
+  color: rgb(69, 69, 69);
+  margin-top: 1rem;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 0px;
+}
+
+.date-rest {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  width: 40px;
+  padding-top: 1.2rem;
+}
+
+.agenda-card h2 {
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.bloc-artist {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
+  font-size: 1rem;
+}
+
+.bloc-artist p {
+  margin-top: 0;
+}
+
+.agenda-button {
+  display: flex;
+  justify-content: center;
+}
+
+.agenda-button button {
+  margin-left: 1rem;
+}
+
+.agenda-button button:hover {
+  background-color: black;
+  color: white;
+}
+
+.calendar-button {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-button button {
+  margin: 0.2rem;
+}
+
+.calendar-button button:hover {
+  background-color: black;
+  color: white;
+}
+
+.active {
+  text-decoration: underline;
+}

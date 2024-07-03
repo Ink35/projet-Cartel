@@ -1,0 +1,24 @@
+.btn-choose button {
+  margin: 0.3rem;
+}
+
+.btn-choose {
+  display: flex;
+  justify-content: center;
+}
+
+.active-admin {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.url-table {
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.date-number {
+  text-align: center;
+}

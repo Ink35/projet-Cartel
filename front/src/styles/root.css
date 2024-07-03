@@ -1,0 +1,12 @@
+.main {
+  background-color: white;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 2rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Optionnel : pour les navigateurs qui ajoutent un margin par défaut */
+}

@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?path=$1 [NC,L,QSA]
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "https://projet-cartel.kindr.fr"
+    Header set Access-Control-Allow-Headers "Authorization, Content-Type"
+    Header set Access-Control-Allow-Credentials true
+</IfModule>

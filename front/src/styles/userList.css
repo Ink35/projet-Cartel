@@ -1,0 +1,9 @@
+.btn-classique:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn-classique {
+  padding-top: 0.2rem;
+  padding-bottom: 0;
+}

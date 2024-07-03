@@ -1,0 +1,152 @@
+.col-link a {
+  margin-right: 10px; /* Adjust the value as needed */
+}
+
+.search-facture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-facture article {
+  margin: 2rem;
+}
+
+.space {
+  margin-top: 2rem;
+}
+
+.trash {
+  transition: 0.5s;
+}
+
+.trash:hover {
+  color: red;
+}
+
+.trash-can {
+  text-align: center;
+}
+
+table th {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.special-width {
+  width: 90%;
+}
+
+/* table {
+  table-layout: fixed;
+} */
+
+/* table td {
+  text-align: center;
+  white-space: wrap;
+  text-overflow: ellipsis;
+} */
+
+.col-client {
+  text-align: center;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  width: 23%;
+}
+.col-facture {
+  text-align: center;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  width: 10%;
+}
+.col-link {
+  text-align: center;
+  width: 5%;
+}
+
+.col-acompte {
+  text-align: center;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  width: 15%;
+}
+
+.col-relance {
+  text-align: center;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  width: 8%;
+}
+
+.col-com {
+  text-align: center;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  width: 20%;
+}
+
+.col-archive {
+  text-align: center;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  width: 7%;
+}
+
+.col-delete {
+  text-align: center;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  width: 5%;
+}
+
+.col-artiste {
+  text-align: center;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  width: 10%;
+}
+
+.col-checklist {
+  width: 5%;
+  max-width: 5%;
+}
+
+.col-city {
+  width: 5%;
+}
+
+.col-place {
+  width: 10%;
+}
+
+.col-date {
+  width: 5%;
+}
+
+.col-type {
+  width: 5%;
+}
+
+input {
+  width: 100%;
+}
+
+.filtre-facture {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filtre-facture div {
+  margin: 5px;
+}
+
+.filter-facture-box {
+  width: 40%;
+}
+
+.filter-date-box div {
+  margin: 5px;
+}
