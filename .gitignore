@@ -1,0 +1,4 @@
+api/.env
+front/node_modules
+front/build
+api/calendar_key.json
