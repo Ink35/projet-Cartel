@@ -4,7 +4,7 @@ import { deleteCity, getAllCities, updateCity } from "../actions/city.action";
 import { selectCities } from "../reducers/city.reducer";
 import { selectDates } from "../reducers/date.reducer";
 import { getAllDates } from "../actions/date.action";
-import TableCities from "./tableCities";
+import AdminDate from "./AdminDate";
 
 const CitiesList = () => {
   const dispatch = useDispatch();
@@ -245,7 +245,7 @@ const CitiesList = () => {
           </li>
         ))}
       </ul>
-      {city_id !== null && <TableCities city_id={city_id} />}
+      {city_id !== null && <AdminDate id={city_id} type="city" />}
     </>
   );
 };

@@ -7,8 +7,8 @@ import {
   getAllUsers,
 } from "../actions/auth.action";
 import { selectUsers } from "../reducers/auth.reducer";
-import TableBooker from "./tableBooker";
 import "../styles/userList.css";
+import AdminDate from "./AdminDate";
 
 const UserList = () => {
   const dispatch = useDispatch();
@@ -300,7 +300,7 @@ const UserList = () => {
       ) : (
         <p>No users found.</p>
       )}
-      {user_id !== null && <TableBooker user_id={user_id} />}
+      {user_id !== null && <AdminDate id={user_id} type="booker" />}
     </div>
   );
 };

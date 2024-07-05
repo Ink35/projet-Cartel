@@ -8,7 +8,7 @@ import {
 import { selectAgents } from "../reducers/agent.reducer";
 import { selectDates } from "../reducers/date.reducer";
 import { getAllDates } from "../actions/date.action";
-import TableAgents from "./TableAgents";
+import AdminDate from "./AdminDate";
 
 const AgentsList = () => {
   const dispatch = useDispatch();
@@ -131,14 +131,14 @@ const AgentsList = () => {
                         className="btn-classique"
                         onClick={handleValidate}
                       >
-                        <i class="fa-solid fa-check"></i>
+                        <i className="fa-solid fa-check"></i>
                       </button>
                       <button
                         type="button"
                         className="btn-classique"
                         onClick={handleCancel}
                       >
-                        <i class="fa-solid fa-xmark"></i>
+                        <i className="fa-solid fa-xmark"></i>
                       </button>
                     </>
                   ) : (
@@ -149,7 +149,7 @@ const AgentsList = () => {
                         handleUpdateAgent(agent.agent_ID, agent.agent_name)
                       }
                     >
-                      <i class="fa-solid fa-pen-to-square"></i>
+                      <i className="fa-solid fa-pen-to-square"></i>
                     </button>
                   )}
                 </td>
@@ -250,7 +250,7 @@ const AgentsList = () => {
           </li>
         ))}
       </ul>
-      {agent_id !== null && <TableAgents agent_id={agent_id} />}
+      {agent_id !== null && <AdminDate id={agent_id} type="agent" />}
     </>
   );
 };

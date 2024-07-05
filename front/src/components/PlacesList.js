@@ -8,7 +8,7 @@ import {
 import { selectPlaces } from "../reducers/place.reducer";
 import { selectDates } from "../reducers/date.reducer";
 import { getAllDates } from "../actions/date.action";
-import TablePlaces from "./tablePlaces";
+import AdminDate from "./AdminDate";
 
 const PlacesList = () => {
   const dispatch = useDispatch();
@@ -250,7 +250,7 @@ const PlacesList = () => {
           </li>
         ))}
       </ul>
-      {place_id !== null && <TablePlaces place_id={place_id} />}
+      {place_id !== null && <AdminDate id={place_id} type="salle" />}
     </>
   );
 };

@@ -73,49 +73,49 @@ const Form = () => {
     artistes &&
     artistes.map((artiste) => ({
       value: artiste.artiste_ID,
-      label: artiste.artiste_name,
+      label: artiste.artiste_name.toUpperCase(),
     }));
 
   const citiesOptions =
     cities &&
     cities.map((city) => ({
       value: city.city_ID,
-      label: city.city_name,
+      label: city.city_name.toUpperCase(),
     }));
 
   const placesOptions =
     filteredPlaces &&
     filteredPlaces.map((place) => ({
       value: place.place_ID,
-      label: place.place_name,
+      label: place.place_name.toUpperCase(),
     }));
 
   const typesOptions =
     types &&
     types.map((type) => ({
       value: type.type_ID,
-      label: type.type,
+      label: type.type.toUpperCase(),
     }));
 
   const subtypesOptions =
     filteredSubtypes &&
     filteredSubtypes.map((subtype) => ({
       value: subtype.subtype_ID,
-      label: subtype.subtype,
+      label: subtype.subtype.toUpperCase(),
     }));
 
   const structuresOptions =
     structures &&
     structures.map((structure) => ({
       value: structure.structure_ID,
-      label: structure.structure_name,
+      label: structure.structure_name.toUpperCase(),
     }));
 
   const agentsOptions =
     agents &&
     agents.map((agent) => ({
       value: agent.agent_ID,
-      label: agent.agent_name,
+      label: agent.agent_name.toUpperCase(),
     }));
 
   const handleSelectArtisteChange = (selectedOption) => {

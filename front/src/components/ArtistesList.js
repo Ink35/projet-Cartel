@@ -8,7 +8,7 @@ import {
 import { selectArtistes } from "../reducers/artiste.reducer";
 import { selectDates } from "../reducers/date.reducer";
 import { getAllDates } from "../actions/date.action";
-import TableArtistes from "./tableArtistes";
+import AdminDate from "./AdminDate";
 
 const ArtistesList = () => {
   const dispatch = useDispatch();
@@ -153,14 +153,14 @@ const ArtistesList = () => {
                         className="btn-classique"
                         onClick={handleValidate}
                       >
-                        <i class="fa-solid fa-check"></i>
+                        <i className="fa-solid fa-check"></i>
                       </button>
                       <button
                         type="button"
                         className="btn-classique"
                         onClick={handleCancel}
                       >
-                        <i class="fa-solid fa-xmark"></i>
+                        <i className="fa-solid fa-xmark"></i>
                       </button>
                     </>
                   ) : (
@@ -175,7 +175,7 @@ const ArtistesList = () => {
                         )
                       }
                     >
-                      <i class="fa-solid fa-pen-to-square"></i>
+                      <i className="fa-solid fa-pen-to-square"></i>
                     </button>
                   )}
                 </td>
@@ -279,7 +279,7 @@ const ArtistesList = () => {
           </li>
         ))}
       </ul>
-      {artiste_id !== null && <TableArtistes artiste_id={artiste_id} />}
+      {artiste_id !== null && <AdminDate id={artiste_id} type="artiste" />}
     </>
   );
 };

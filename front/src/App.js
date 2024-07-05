@@ -20,14 +20,15 @@ import Booker from "./components/Booker";
 import Admin from "./components/Admin";
 import Checklist from "./components/Checklist";
 import Compta from "./components/Compta";
+import { Home } from "./components/Home";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements([
       <>
         <Route path="/" element={<Root />}>
-          <Route index element={<Suivi />} />
-          <Route path="suivi" element={<Suivi />} />
+          <Route index element={<Home />} />
+          <Route path="suivi" element={<Home />} />
           <Route path="add_date" element={<AddDatePage />} />
           <Route path="calendrier" element={<Calendar />} />
           <Route path="sign_in" element={<Authentification />} />

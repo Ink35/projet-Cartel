@@ -180,6 +180,7 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
     structures: "",
     users: "",
     agents: "",
+    in_sale: "",
   });
 
   // Attente chargement des dispatch pour afficher les selecteurs et résultat pour évité les erreurs - Avec afficage d'un loading
@@ -410,42 +411,42 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
     artistes &&
     artistes.map((artiste) => ({
       value: artiste.artiste_ID,
-      label: he.decode(artiste.artiste_name),
+      label: he.decode(artiste.artiste_name).toUpperCase(),
     }));
 
   const citiesOptions =
     cities &&
     cities.map((city) => ({
       value: city.city_ID,
-      label: city.city_name,
+      label: city.city_name.toUpperCase(),
     }));
 
   const placesOptions =
     filteredPlaces &&
     filteredPlaces.map((place) => ({
       value: place.place_ID,
-      label: place.place_name,
+      label: place.place_name.toUpperCase(),
     }));
 
   const typesOptions =
     types &&
     types.map((type) => ({
       value: type.type_ID,
-      label: capitalizeFirstLetter(type.type),
+      label: capitalizeFirstLetter(type.type).toUpperCase(),
     }));
 
   const structuresOptions =
     structures &&
     structures.map((structure) => ({
       value: structure.structure_ID,
-      label: capitalizeFirstLetter(structure.structure_name),
+      label: capitalizeFirstLetter(structure.structure_name).toUpperCase(),
     }));
 
   const subtypesOptions =
     filteredSubtypes &&
     filteredSubtypes.map((subtype) => ({
       value: subtype.subtype_ID,
-      label: capitalizeFirstLetter(subtype.subtype),
+      label: capitalizeFirstLetter(subtype.subtype).toUpperCase(),
     }));
 
   const statusOptions = [
@@ -460,14 +461,14 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
     bookers &&
     bookers.map((booker) => ({
       value: booker.user_ID,
-      label: booker.user_name,
+      label: booker.user_name.toUpperCase(),
     }));
 
   const agentOptions =
     agents &&
     agents.map((agent) => ({
       value: agent.agent_ID,
-      label: agent.agent_name,
+      label: agent.agent_name.toUpperCase(),
     }));
 
   const datesByArtiste = filteredDates
@@ -857,9 +858,9 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
     return <Navigate to="/sign_in" />;
   }
 
-  if (currentUser && currentUser.role === "booker ext") {
-    return <Navigate to="/mes_bookings" />;
-  }
+  // if (currentUser && currentUser.role === "booker ext") {
+  //   return <Navigate to="/mes_bookings" />;
+  // }
 
   const getOrderedDatesForArtist = (datesForArtist, addPage) => {
     return addPage === "suivi"
@@ -1058,7 +1059,9 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                     )}
                     <div className="artist-block-name">
                       <h2>
-                        {he.decode(datesForArtist[0].artiste.artiste_name)}
+                        {he
+                          .decode(datesForArtist[0].artiste.artiste_name)
+                          .toUpperCase()}
                       </h2>
                       <p>Nombre(s) de date(s) : {datesForArtist.length}</p>
                     </div>
