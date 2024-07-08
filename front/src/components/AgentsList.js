@@ -114,7 +114,7 @@ const AgentsList = () => {
                     onChange={(e) => handleAgentChange(e.target.value)}
                   ></input>
                 ) : (
-                  <td>{agent.agent_name}</td>
+                  <td>{agent.agent_name.toUpperCase()}</td>
                 )}
                 <td>
                   {dates &&

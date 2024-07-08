@@ -105,7 +105,7 @@ const PlacesList = () => {
         </thead>
         <tbody>
           {currentPlaces &&
-            currentPlaces.map((place, index) => (
+            currentPlaces.map((place) => (
               <tr key={place.place_ID}>
                 {place.place_ID === placeUpdateId ? (
                   <input
@@ -114,7 +114,7 @@ const PlacesList = () => {
                     onChange={(e) => handlePlaceChange(e.target.value)}
                   ></input>
                 ) : (
-                  <td>{place.place_name}</td>
+                  <td>{place.place_name.toUpperCase()}</td>
                 )}
                 <td>
                   {dates &&

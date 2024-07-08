@@ -115,7 +115,7 @@ const ArtistesList = () => {
         </thead>
         <tbody>
           {currentArtistes &&
-            currentArtistes.map((artiste, index) => (
+            currentArtistes.map((artiste) => (
               <tr key={artiste.artiste_ID}>
                 {artiste.artiste_ID === artisteUpdateId ? (
                   <input
@@ -124,7 +124,7 @@ const ArtistesList = () => {
                     onChange={(e) => handleArtisteChange(e.target.value)}
                   ></input>
                 ) : (
-                  <td>{artiste.artiste_name}</td>
+                  <td>{artiste.artiste_name.toUpperCase()}</td>
                 )}
                 {artiste.artiste_ID === artisteUpdateId ? (
                   <td>

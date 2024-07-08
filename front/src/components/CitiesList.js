@@ -110,7 +110,7 @@ const CitiesList = () => {
                     onChange={(e) => handleCityChange(e.target.value)}
                   ></input>
                 ) : (
-                  <td>{city.city_name}</td>
+                  <td>{city.city_name.toUpperCase()}</td>
                 )}
                 <td>
                   {dates &&

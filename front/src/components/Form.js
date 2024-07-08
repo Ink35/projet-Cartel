@@ -69,6 +69,15 @@ const Form = () => {
     dispatch(getAllAgents());
   }, [dispatch, submitCount]);
 
+  let currentUserFormatted = null;
+
+  if (currentUser.role === "booker ext") {
+    currentUserFormatted = {
+      value: currentUser.user_ID,
+      label: currentUser.user_name,
+    };
+  }
+
   const artistesOptions =
     artistes &&
     artistes.map((artiste) => ({
@@ -183,15 +192,11 @@ const Form = () => {
     formDate.append("type_ID", selectedType.value);
     formDate.append("subtype_ID", selectedSubtype.value);
     formDate.append("user_ID", currentUser.user_ID);
+    formDate.append("in_sale", "not_in_sale");
     if (selectedAgent && selectedAgent.label === null) {
       setSelectedAgent({ label: "1" });
     }
     formDate.append("agent_name", selectedAgent ? selectedAgent.label : "1");
-    if (selectedType.label === "production") {
-      formDate.append("in_sale", "not_in_sale");
-    } else {
-      formDate.append("in_sale", "in_sale");
-    }
     dispatch(createDateUpdate(formDate)).then((res) => {
       setSelectedArtiste({
         label: res.data.newDate.artiste.artiste_name,
@@ -351,6 +356,7 @@ const Form = () => {
           key={submitCount}
           page="suivi"
           selectedArtiste={selectedArtiste}
+          currentBooker={currentUserFormatted}
         />
       ) : null}
     </section>

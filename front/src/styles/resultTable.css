@@ -126,3 +126,9 @@
 .cursor {
   cursor: pointer;
 }
+
+.checkbox {
+  margin: 20px;
+  width: 20px; /* Largeur de la checkbox */
+  height: 20px; /* Hauteur de la checkbox */
+}

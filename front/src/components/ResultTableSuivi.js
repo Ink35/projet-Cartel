@@ -180,7 +180,7 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
     structures: "",
     users: "",
     agents: "",
-    in_sale: "",
+    in_sale: false,
   });
 
   // Attente chargement des dispatch pour afficher les selecteurs et résultat pour évité les erreurs - Avec afficage d'un loading
@@ -381,6 +381,9 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
       ) {
         return false;
       }
+      if (filtre.in_sale && donnee.checklist.in_sale !== "not_in_sale") {
+        return false;
+      }
       return true;
     });
   }
@@ -502,6 +505,14 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
     const dateObject = new Date(dateString);
     return format(dateObject, "dd MMMM yyyy", { locale: fr });
   }
+
+  const handleInSaleFilterChange = (event) => {
+    console.log(filters);
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      in_sale: event.target.checked,
+    }));
+  };
 
   const handleChangeStatus = (date_ID) => {
     setStatusID(date_ID);
@@ -1034,6 +1045,15 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                   placeholder="Booker(s)"
                 />
               )}
+              <label>
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  checked={filters.in_sale}
+                  onChange={handleInSaleFilterChange}
+                />
+                Afficher uniquement les dates qui ne sont pas en vente
+              </label>
             </section>
           )}
           <div className="excel-button">
@@ -1122,7 +1142,7 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                                       dateFormat="dd/MM/yyyy"
                                     />
                                   ) : (
-                                    formatFrenchDate(date.date)
+                                    formatFrenchDate(date.date).toUpperCase()
                                   )}
                                 </td>
                                 <td>
@@ -1142,7 +1162,7 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                                       />
                                     </>
                                   ) : (
-                                    date.city.city_name
+                                    date.city.city_name.toUpperCase()
                                   )}
                                 </td>
                                 <td>
@@ -1158,7 +1178,7 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                                       />
                                     </>
                                   ) : (
-                                    date.place.place_name
+                                    date.place.place_name.toUpperCase()
                                   )}
                                 </td>
                                 <td>
@@ -1174,7 +1194,7 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                                       />
                                     </>
                                   ) : (
-                                    capitalizeFirstLetter(date.type.type)
+                                    date.type.type.toUpperCase()
                                   )}
                                 </td>
                                 <td>
@@ -1190,7 +1210,7 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                                       />
                                     </>
                                   ) : (
-                                    capitalizeFirstLetter(date.subtype.subtype)
+                                    date.subtype.subtype.toUpperCase()
                                   )}
                                 </td>
                                 {date.type.type === "production" ? (
@@ -1205,7 +1225,7 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                                     />
                                   ) : (
                                     <td className="agent-div">
-                                      {date.agent.agent_name}
+                                      {date.agent.agent_name.toUpperCase()}
                                     </td>
                                   )
                                 ) : (
@@ -1327,34 +1347,30 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                                     </>
                                   )}
                                 </td>
-                                {date.type.type === "production" ? (
-                                  <td className="col-end">
-                                    {date.checklist.in_sale ===
-                                    "not_in_sale" ? (
-                                      <i
-                                        onClick={() =>
-                                          handleMisEnVente(
-                                            date.checklist.checklist_ID
-                                          )
-                                        }
-                                        className="fa-solid fa-circle-xmark cursor"
-                                        style={{ color: "#ff1f1f" }}
-                                      ></i>
-                                    ) : (
-                                      <i
-                                        onClick={() =>
-                                          handlePasMisEnVente(
-                                            date.checklist.checklist_ID
-                                          )
-                                        }
-                                        className="fa-solid fa-circle-check cursor"
-                                        style={{ color: "#63E6BE" }}
-                                      ></i>
-                                    )}
-                                  </td>
-                                ) : (
-                                  <td></td>
-                                )}
+
+                                <td className="col-end">
+                                  {date.checklist.in_sale === "not_in_sale" ? (
+                                    <i
+                                      onClick={() =>
+                                        handleMisEnVente(
+                                          date.checklist.checklist_ID
+                                        )
+                                      }
+                                      className="fa-solid fa-circle-xmark cursor"
+                                      style={{ color: "#ff1f1f" }}
+                                    ></i>
+                                  ) : (
+                                    <i
+                                      onClick={() =>
+                                        handlePasMisEnVente(
+                                          date.checklist.checklist_ID
+                                        )
+                                      }
+                                      className="fa-solid fa-circle-check cursor"
+                                      style={{ color: "#63E6BE" }}
+                                    ></i>
+                                  )}
+                                </td>
 
                                 {addPage && addPage === "booker" ? null : (
                                   <td>
@@ -1370,7 +1386,7 @@ const ResultTableSuivi = ({ currentBooker, selectedArtiste, page }) => {
                                         />
                                       </>
                                     ) : (
-                                      date.user.user_name
+                                      date.user.user_name.toUpperCase()
                                     )}
                                   </td>
                                 )}
